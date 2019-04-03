@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('clone repo ') { 
             steps {
-                bat "git clone https://github.com/smruti-pal/firstpipeline.git"
                 bat "mvn clean"
             }
         }
