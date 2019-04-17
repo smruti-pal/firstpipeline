@@ -1,27 +1,8 @@
-pipeline {
-    agent any 
-    stages {
-        stage('clone repo ') { 
-            steps {
-                bat "mvn clean"
-            }
-        }
-        stage('Test') { 
-            steps {
-                bat "mvn test" 
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                bat "mvn package" 
-            }
-        }
-        stage('Results') {
-            steps {
-                junit '**/target/surefire-reports/TEST-*.xml'
-                archive 'target/*.jar'
-            }
-         }
-    }
-
+node {
+    stage ('SCM checkout')
+    checkout([$class: 'GitSCM',
+              branches: [[name: '*/master']], 
+              doGenerateSubmoduleConfigurations: false, 
+              extensions: [], submoduleCfg: [], 
+              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git']]])
 }
