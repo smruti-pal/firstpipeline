@@ -9,4 +9,10 @@ node {
     stage ('build'){ 
       bat "mvn clean install"
     }
+    stage('SonarQube Analysis') {
+        
+        withSonarQubeEnv('SonarQube_Server') { 
+          bat "mvn sonar:sonar"
+        }
+    }
 }
