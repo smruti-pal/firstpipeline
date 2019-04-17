@@ -6,7 +6,8 @@ node {
               branches: [[name: '*/master']], 
               doGenerateSubmoduleConfigurations: false, 
               extensions: [], submoduleCfg: [], 
-              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git',branch: "${params.branch}]]])
+              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git', 
+                                   branch: "${params.branch}]]])
     }
     stage ('build'){ 
       bat "mvn clean install"
