@@ -4,12 +4,7 @@ node {
         echo "Pulling changes from the branch ${params.branch}"
         git url: 'https://github.com/smruti-pal/firstpipeline.git', branch: "${params.branch}"
     }
-    stage ('SCM checkout'){
-        echo "Pulling changes from the branch ${params.choice}"
-    checkout([$class: 'GitSCM', branches: [[name: '*/master'], [name: '*/test']], 
-              doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [],
-              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git']]])
-    }
+    
     stage ('build'){ 
       bat "mvn clean install"
     }
