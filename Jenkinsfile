@@ -3,11 +3,10 @@ node {
     stage ('SCM checkout'){
         echo "Pulling changes from the branch ${params.branch}"
     checkout([$class: 'GitSCM',
-              branches: [[name: '*/master']], 
+              branches: "${params.branch}, 
               doGenerateSubmoduleConfigurations: false, 
               extensions: [], submoduleCfg: [], 
-              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git', 
-                                   branch: "${params.branch}]]])
+              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git']]])
     }
     stage ('build'){ 
       bat "mvn clean install"
