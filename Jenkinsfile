@@ -2,7 +2,7 @@ properties([parameters([choice(choices: 'master\ntest', description: 'Select bra
 node {
      stage('Scm Checkout'){
         echo "Pulling changes from the branch ${params.branch}"
-        git url: 'https://github.com/smruti-pal/firstpipeline.git', branch: "${params.branch}"
+        git url: 'https://github.com/smruti-pal/firstpipeline.git', branch: "${params.branch}, credentialsId: 'Github_id'"
     }
     
     stage ('build'){ 
