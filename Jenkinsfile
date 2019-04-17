@@ -14,5 +14,8 @@ node {
         withSonarQubeEnv('SonarQube_Server') { 
           bat "mvn sonar:sonar"
         }
+        stage('email'){
+        emailext body: 'sfsfs', recipientProviders: [developers()], subject: 'dghsfs', to: 'palsmrutiranjan001@gmail.com'
+        }
     }
 }
