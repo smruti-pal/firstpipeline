@@ -1,10 +1,12 @@
+properties([parameters([choice(choices: 'master\ntest', description: 'Select branch to build', name: 'choice')])])
 node {
     stage ('SCM checkout'){
+        echo "Pulling changes from the branch ${params.branch}"
     checkout([$class: 'GitSCM',
               branches: [[name: '*/master']], 
               doGenerateSubmoduleConfigurations: false, 
               extensions: [], submoduleCfg: [], 
-              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git']]])
+              userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/smruti-pal/firstpipeline.git',branch: "${params.branch}]]])
     }
     stage ('build'){ 
       bat "mvn clean install"
