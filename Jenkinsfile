@@ -13,6 +13,8 @@ node {
         withSonarQubeEnv('SonarQube_Server') { 
           bat "mvn sonar:sonar"
         }
+    }
+     stage("Quality Gate"){
          timeout(time: 5, unit: 'MINUTES') {
               def qg = waitForQualityGate()
               if (qg.status != 'OK') {
