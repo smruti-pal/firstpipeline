@@ -15,4 +15,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributorManagement>
+    <repository>
+      <id>firstpipeline_releases</id>
+      <name> </name>
+      <url>http://localhost:5000/repository/firstpipeline_releases/</url>
+      </repository>
+    <snapshotRepository>
+      <id>firstpipeline_snapshots</id>
+      <name> </name>
+      <url>http://localhost:5000/repository/firstpipeline_snapshots/</url>
+      </snapshotRepository>
+    </distributorManagement>
 </project>
