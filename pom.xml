@@ -15,7 +15,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <distributorManagement>
+  <!--<distributorManagement>
     <repository>
       <id>firstpipeline_releases</id>
       <name> </name>
@@ -26,5 +26,5 @@
       <name> </name>
       <url>http://localhost:5000/repository/firstpipeline_snapshots/</url>
       </snapshotRepository>
-    </distributorManagement>
+    </distributorManagement> -->
 </project>
