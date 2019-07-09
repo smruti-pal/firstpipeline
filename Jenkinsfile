@@ -27,5 +27,5 @@ node {
         emailext body: 'sfsfs', recipientProviders: [developers()], subject: 'dghsfs', to: 'palsmrutiranjan001@gmail.com'
         }
     
-    
+     stage('test'){}
 }
