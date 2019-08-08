@@ -7,6 +7,24 @@
   <version>1.0-SNAPSHOT</version>
   <name>firstpipeline</name>
   <url>http://maven.apache.org</url>
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>com.lazerycode.jmeter</groupId>
+                <artifactId>jmeter-maven-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <id>jmeter-tests</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jmeter</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,4 +33,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <!--<distributorManagement>
+    <repository>
+      <id>firstpipeline_releases</id>
+      <name> </name>
+      <url>http://localhost:5000/repository/firstpipeline_releases/</url>
+      </repository>
+    <snapshotRepository>
+      <id>firstpipeline_snapshots</id>
+      <name> </name>
+      <url>http://localhost:5000/repository/firstpipeline_snapshots/</url>
+      </snapshotRepository>
+    </distributorManagement> -->
 </project>
