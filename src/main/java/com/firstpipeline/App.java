@@ -11,7 +11,7 @@ public class App
         System.out.println( "Hello smruti ranjan" );
     }
     
-    
+
     
     public static void main( String[] args )
     {
@@ -21,6 +21,7 @@ public class App
     
     public static void main( String[] args )
     {
+
         System.out.println( "in master branch" );
     }
     
@@ -28,5 +29,6 @@ public class App
      public static void main( String[] args )
     {
         System.out.println( "in master branch  testing" );
+
     }
 }

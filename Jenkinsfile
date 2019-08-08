@@ -14,6 +14,11 @@ node {
           bat "mvn sonar:sonar"
         }
     }
+
+    
+    stage(''){}
+
+
      stage("Quality Gate"){
          timeout(time: 30, unit: 'MINUTES') {
               def qg = waitForQualityGate()
@@ -28,4 +33,5 @@ node {
         }
     
      stage('test'){}
+
 }
