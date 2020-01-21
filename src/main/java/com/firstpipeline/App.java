@@ -31,4 +31,9 @@ public class App
         System.out.println( "in master branch  testing" );
 
     }
+     public static void fun1( String[] args )
+    {
+        System.out.println( "in master branch  testing for webhook" );
+
+    }
 }
